@@ -29,7 +29,7 @@ public class Deposit {
 	public double depositAmount(double amount) {
 		
 		// business logic
-		// Go to db ==> get current Balance where acctNumber = acctNumber
+		// Go to db ==> get current Balance where acctNumber = acctNumber SQL Exceptiuon
 		
 		System.out.println("Acct NUmber : "+acctNumber);
 		

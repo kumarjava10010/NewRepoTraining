@@ -14,10 +14,22 @@ package com.java.bnak.MyBankDemo;
 
 	}
 
-	public double depositAmount(double amount) {
+	public double depositAmount(double amount) throws BankCustomException {
 
 		// business logic
-		// Go to db ==> get current Balance where acctNumber = acctNumber
+		// Go to db ==> get current Balance where acctNumber = acctNumber  DAoClass
+		
+		// Account is not active 
+		
+		boolean isAcctActive = true;
+		
+		if(acctNumber == 1234) {
+			isAcctActive = false;
+		}
+		
+		if(!isAcctActive) {
+			throw new BankCustomException("Account is not Active");
+		}
 
 		double currentBalance = 1000.00;
 

@@ -9,6 +9,8 @@ public class StaticDemo {
 	
 	static final String checkingAcct = "CHECKING";
 	static final String savingAcct = "SAVING";
+	
+	static final String deFAULTiNTrATE = "1.5";
 
 	
 	public StaticDemo() {

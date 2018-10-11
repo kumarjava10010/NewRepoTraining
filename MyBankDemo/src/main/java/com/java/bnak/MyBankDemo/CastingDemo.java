@@ -2,20 +2,24 @@ package com.java.bnak.MyBankDemo;
 
 public class CastingDemo {
 
-	public static void main(String[] args) { 
+	public static void main(String[] args) throws BankCustomException { 
 		
 		CastingDemo demoObj = new CastingDemo();
 		
 		// Normal usage
 		Account acctObj = new Account("kumar", 1234);
-		double newBal = acctObj.depositAmount(100.00);
+		double newBal;
+		newBal = acctObj.depositAmount(100.00);
+		
 		System.out.println("My New Balance  : "+newBal);
+		
 		
 		
 		//Casting from a subclass to a superclass is called upcasting
 		Account acctObj1 = new CheckingAccount("kumar", 1234);
 		
-		double newBal1 = acctObj1.depositAmount(100.00);
+		double newBal1;
+		newBal1 = acctObj1.depositAmount(100.00);
 		System.out.println("My New Balance 1 : "+newBal1);
 		
 		// we cannot invoke withdraw method on acctObje=
