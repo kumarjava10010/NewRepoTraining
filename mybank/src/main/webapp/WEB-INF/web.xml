@@ -9,14 +9,14 @@
 		<welcome-file>/jsp/home.jsp</welcome-file>
 	</welcome-file-list>
 
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>customer</servlet-name>
 		<servlet-class>com.java.servlet.CustomerServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>customer</servlet-name>
 		<url-pattern>/register</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 
 
 	<!-- DispatcherServlet is the root Servlet for any Servlet defined in your 

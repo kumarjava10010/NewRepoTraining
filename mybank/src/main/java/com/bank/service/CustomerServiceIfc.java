@@ -4,8 +4,8 @@ import com.bank.persistance.model.Customer;
 
 public interface CustomerServiceIfc {
 	
-	public Customer createCustomer(Customer Customer);
-	public Customer updateCustomer(Customer Customer);
+	public Customer createCustomer(Customer customer);
+	public Customer updateCustomer(Customer customer);
 
 
 }

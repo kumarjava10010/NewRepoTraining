@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
-	<context:component-scan base-package="com.java.*" />
+	<context:component-scan base-package="com.bank.*" />
 
 	<context:annotation-config />
 
@@ -33,7 +33,7 @@
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
-		<property name="packagesToScan" value="com.java.persistance.entity"></property>
+		<property name="packagesToScan" value="com.bank.persistance.model"></property>
 	</bean>
 
 	<!-- Transaction -->
@@ -53,9 +53,9 @@
 	<!-- <tx:annotation-driven transaction-manager="transactionManager-jdbc" 
 		/> -->
 		
-		<bean id = "acctInfoDao" class = "com.bank.persistance.dao.AcctInfoDaoImpl" />
+		<!-- <bean id = "customerDao" class = "com.bank.persistance.dao.CustomerDaoImpl" />
 		
 		<bean id = "customerService" class = "com.bank.service.CustomerServiceImpl">
-			<property name="acctInfoDao123" ref="acctInfoDao"></property>
-		</bean>
+			<property name="customerDao" ref="customerDao"></property>
+		</bean> -->
 </beans>  
