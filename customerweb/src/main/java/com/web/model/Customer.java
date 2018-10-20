@@ -1,75 +1,38 @@
-/**
- * 
- */
-package com.bank.persistance.model;
+package com.web.model;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-/**
- * @author cragh
- *
- */
-@Entity
-@Table(name = "CUSTOMER")
-@NamedQueries({ @NamedQuery(name = "authenticate", query = "SELECT user FROM Customer user "
-		+ "WHERE user.username = :user AND user.password = :pass") })
-public class Customer implements java.io.Serializable{
+public class Customer {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	private Integer acctNo;
 
-	@Id
-	@Column(name = "ACCT_NO",  unique = true, updatable = false, nullable = false)
-	private int acctNo;
-	
-	@Size(min = 3, max = 20, message = "Last namemust be between 3 and 20 characters ")
-	@Column(name = "LastName")
 	private String lastName;
 
-	@Size(min = 3, max = 20, message = "Last namemust be between 3 and 20 characters ")
-	@Column(name = "FirstName")
 	private String firstName;
 
-	@Column(name = "SSN")
 	private String ssn;
 
-	@Column(name = "Address")
 	private String address;
 
-	@Column(name = "City")
 	private String city;
 
-	@Column(name = "State")
 	private String state;
 
-	@Column(name = "ZipCode")
 	private String zipCode;
-	
-	@NotNull(message = "User Name should not be null or Empty")
-    @NotBlank(message = "@NotBlank - User Name should not be null or Empty")
-	@Column(name = "USER_NAME")
+
 	private String username;
 
-	@NotNull(message = "Password should not be null or Empty")
-    @NotBlank(message = "@NotBlank - Password should not be null or Empty")
-	@Column(name = "PASSWORD")
 	private String password;
 
 	/**
 	 * @return the acctNo
 	 */
-	public int getAcctNo() {
+	public Integer getAcctNo() {
 		return acctNo;
 	}
 
@@ -77,7 +40,7 @@ public class Customer implements java.io.Serializable{
 	 * @param acctNo
 	 *            the acctNo to set
 	 */
-	public void setAcctNo(int acctNo) {
+	public void setAcctNo(Integer acctNo) {
 		this.acctNo = acctNo;
 	}
 
@@ -126,7 +89,6 @@ public class Customer implements java.io.Serializable{
 		this.ssn = ssn;
 	}
 
-
 	/**
 	 * @return the address
 	 */
@@ -135,24 +97,11 @@ public class Customer implements java.io.Serializable{
 	}
 
 	/**
-	 * @param address the address to set
+	 * @param address
+	 *            the address to set
 	 */
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	/**
-	 * @return the username
-	 */
-	public String getUsername() {
-		return username;
-	}
-
-	/**
-	 * @param username the username to set
-	 */
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	/**
@@ -201,6 +150,21 @@ public class Customer implements java.io.Serializable{
 	}
 
 	/**
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * @param username
+	 *            the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	/**
 	 * @return the password
 	 */
 	public String getPassword() {
@@ -222,14 +186,8 @@ public class Customer implements java.io.Serializable{
 	public String toString() {
 		return "Customer [acctNo=" + acctNo + ", lastName=" + lastName + ", firstName=" + firstName + ", ssn=" + ssn
 				+ ", address=" + address + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode
-				+ ", username=" + username + ", password=" + password + ", getAcctNo()=" + getAcctNo()
-				+ ", getLastName()=" + getLastName() + ", getFirstName()=" + getFirstName() + ", getSsn()=" + getSsn()
-				+ ", getAddress()=" + getAddress() + ", getUsername()=" + getUsername() + ", getCity()=" + getCity()
-				+ ", getState()=" + getState() + ", getZipCode()=" + getZipCode() + ", getPassword()=" + getPassword()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
+				+ ", username=" + username + ", password=" + password + "]";
 	}
-	
 	
 	
 

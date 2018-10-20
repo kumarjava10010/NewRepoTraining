@@ -6,6 +6,7 @@ public interface CustomerServiceIfc {
 	
 	public Customer createCustomer(Customer customer);
 	public Customer updateCustomer(Customer customer);
+	public Customer getCusttomer(int acctNo);
 
 
 }

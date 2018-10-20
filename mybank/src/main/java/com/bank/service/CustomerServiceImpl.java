@@ -19,7 +19,7 @@ public class CustomerServiceImpl implements CustomerServiceIfc{
 		// Address verification
 		// background check
 		//ID verification
-		
+		System.out.println("I am in CustomerServiceImpl ClASS ");
 		@SuppressWarnings("unused")
 		int result = customerDao.save(customer);
 		
@@ -29,6 +29,11 @@ public class CustomerServiceImpl implements CustomerServiceIfc{
 	public Customer updateCustomer(Customer Customer) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Customer getCusttomer(int acctNo) {
+		
+		return customerDao.findByAcctNumber(acctNo);
 	}
 
 }

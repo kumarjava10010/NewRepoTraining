@@ -2,34 +2,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+
 <html>
-<head>
-<style>
-.error {
-	color: red;
-	font-weight: bold;
-}
-</style>
-
-</head>
-
 <body>
+	<h2>Customer Registration Page</h2>
+	<br>
 	<br>
 	<form:form id="customerForm" modelAttribute="customerObject"
-		action="customerSave" method="post">
-		<table width="500px" border=0 align="center"
-			style="background-color: ffeeff;">
+		action="registerSave" method="post">
 
+		<table>
 
-			<tr>
-				<td colspan=2 style="font-weight: bold; font-size: 20pt;"
-					align="center">Customer Registration</td>
-
-			</tr>
-			<tr>
-				<td colspan=2>&nbsp;</td>
-
-			</tr>
 			<tr>
 				<td>Account Number</td>
 				<td><form:input path="acctNo" name="acctNo" id="acctNo" /></td>
@@ -39,32 +22,32 @@
 				<td>First Name</td>
 				<td><form:input path="firstName" name="firstName"
 						id="firstName" /></td>
-				<td align="left"><form:errors path="firstName" cssClass="error" /></td>
+				<td align="left"></td>
 			</tr>
 			<tr>
 				<td>Last Name</td>
 				<td><form:input path="lastName" name="lastName" id="lastName" /></td>
-				<td align="left"><form:errors path="lastName" cssClass="error" /></td>
+				<td align="left"></td>
 
 			</tr>
 			<tr>
 
 				<td>Login Name</td>
 
-				<td><form:input path="username" name="username" id="username" /> <font color="red">*</font></td>
+				<td><form:input path="username" name="username" id="username" /></td>
 				<td align="left"><form:errors path="username" cssClass="error" /></td>
 
 			</tr>
 			<tr>
 				<td>Password</td>
 				<td><form:password path="password" name="password"
-						id="password" /><font color="red">*</font></td>
+						id="password" /></td>
 				<td align="left"><form:errors path="password" cssClass="error" /></td>
 
 			</tr>
 			<tr>
 				<td>SSN</td>
-				<td><form:input path="ssn" name="ssn" id="ssn" /><font color="red">*</font></td>
+				<td><form:input path="ssn" name="ssn" id="ssn" /></td>
 				<td align="left"><form:errors path="ssn" cssClass="error" /></td>
 			</tr>
 			<tr>
@@ -87,15 +70,9 @@
 				<td></td>
 				<td><input type="submit" name="Submit" value="Save User"></td>
 			</tr>
-
-			<!-- <tr>
-				<td></td>
-				<td><a href="registerSuccess.jsp">Save</a></td>
-			</tr> -->
-
 		</table>
 	</form:form>
+
+
 </body>
 </html>
-
-

@@ -9,14 +9,30 @@
 		<welcome-file>/jsp/home.jsp</welcome-file>
 	</welcome-file-list>
 
-	<!-- <servlet>
-		<servlet-name>customer</servlet-name>
-		<servlet-class>com.java.servlet.CustomerServlet</servlet-class>
+	<listener>
+		<listener-class>
+			com.sun.xml.ws.transport.http.servlet.WSServletContextListener<!-- org.springframework.web.context.ContextLoaderListener -->
+		</listener-class>
+	</listener>
+	<!-- Spring context -->
+	<!-- <context-param> <param-name>contextConfigLocation</param-name> <param-value>classpath:spring-mvc-servlet.xml</param-value> 
+		</context-param> -->
+
+
+
+	<servlet>
+		<servlet-name>JAXWSServlet</servlet-name>
+		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>customer</servlet-name>
-		<url-pattern>/register</url-pattern>
-	</servlet-mapping> -->
+		<servlet-name>JAXWSServlet</servlet-name>
+		<url-pattern>/customerWS</url-pattern>
+	</servlet-mapping>
+
+	<!-- <servlet> <servlet-name>customer</servlet-name> <servlet-class>com.java.servlet.CustomerServlet</servlet-class> 
+		</servlet> <servlet-mapping> <servlet-name>customer</servlet-name> <url-pattern>/register</url-pattern> 
+		</servlet-mapping> -->
 
 
 	<!-- DispatcherServlet is the root Servlet for any Servlet defined in your 
@@ -32,5 +48,6 @@
 		<servlet-name>spring-mvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
 
 </web-app>

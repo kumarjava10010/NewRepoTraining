@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bank.persistance.model.Customer;
+import com.bank.persistance.model.LoginUser;
 
 @Repository("customerDao")
 @Transactional
@@ -58,6 +59,38 @@ public class CustomerDaoImpl implements CustomerDaoIfc {
 		Customer cust = (Customer) session.get(Customer.class, acctNumer);
 		return cust;
 
+	}
+	
+	public Customer authenticate(LoginUser loginUser) {
+		try {
+			System.out.println("I am in DAO Class " + loginUser.getUsername());
+
+			// String hql = "FROM LoginUser user WHERE user.username = :name AND
+			// user.password = :pass";
+
+			Session session = sessionFactory.getCurrentSession();
+
+			Query query = session.getNamedQuery("authenticate");
+			query.setParameter("user", loginUser.getUsername());
+			query.setParameter("pass", loginUser.getPassword());
+
+			List<Customer> results = query.list();
+
+			if (results.isEmpty()) {
+				System.out.println("I am in DAO Class Failed " + loginUser.getUsername());
+
+				return null;
+
+			} else {
+				System.out.println("I am in DAO Class Success : " + loginUser.getUsername());
+
+				return (Customer) results.get(0);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return null;
 	}
 
 }

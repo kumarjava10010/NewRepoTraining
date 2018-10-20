@@ -28,7 +28,7 @@ A {
 	<br>
 	<form id="welcomeForm"  modelAttribute="customer" action = "customerAction" method="post">
 
-		<table >
+	<%-- 	<table >
 
 			<tr>
 				<td style="font-weight: bold; font-size: 20pt;" align="center">Welcome  
@@ -39,6 +39,57 @@ A {
 					${customer.acctNo} 
 				</td>
 			</tr>
+		</table> --%>
+		
+		<table border=0 width="500px" align="center"
+			style="background-color: ffeeff;">
+
+			<tr>
+				<td style="font-weight: bold; font-size: 20pt;" align="center">Welcome
+					<%-- <%=request.getSession().getAttribute("LoggedInUser") %></td> --%>
+					${customer.firstName}. Your Account number: ${customer.acctNo}  <form:hidden path="acctNo" /> 
+				</td>
+			</tr>
+			<tr>
+				<!-- <td><a href="home.jsp">Home</a></td> -->
+				<td align="center"><input type="submit" name="home"
+					value="Home" /></td>
+			</tr>
+
+			<tr>
+				<td align="right">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center"><input type="submit" name="updateProfile"
+					value="Update profile" /></td>
+
+			</tr>
+			<tr>
+				<td align="right">&nbsp;</td>
+			</tr>
+			<tr>
+
+				<td align="center"><input type="submit" name="accountSummary"
+					value="Account Summary" /></td>
+			</tr>
+			<tr>
+				<td align="right">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center"><input type="submit" name="deposit"
+					value="Deposit/Withdraw" /></td>
+			</tr>
+			<tr>
+				<td align="center">&nbsp;</td>
+			</tr>
+			<tr>
+				<td align="center"><input type="submit" name="transaction"
+					value="View Transaction" /></td>
+			</tr>
+			<tr>
+				<td align="center">&nbsp;</td>
+			</tr>
+
 		</table>
 	</form>
 </body>
